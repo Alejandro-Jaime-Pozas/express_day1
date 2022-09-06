@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Index</title>
 </head>
 <body>
     <!-- this doc used to be the index.html, change to index.ejs -->
@@ -15,7 +15,7 @@
     <!-- locals.value allows you to bypass errors and just have the value be undefined until needed -->
     <h4>Welcome <%= locals.firstName %> <%= locals.lastName %> </h4>
     <% if (locals.firstName) { %>
-        <h4>Welcome <%= locals.firstName %><h4>
+        <h4>Welcome <%= locals.firstName + locals.lastName%><h4>
     <% } else { %>
         <h4>Welcome please sign up<h4>
     <% } %>

@@ -33,7 +33,22 @@ let users = [
 ]
 
 app.get('/users', (req, res) => {
-    res.render('users', { users })
+    res.render('users', { users }) // here { users } is a LOCAL, is the same as {users: users}, sets the users to users
+})
+
+app.get('/users/:id', (req, res) => { // this gets the url made by the client/user
+    const id = req.params.id; // refers to the app.get above after the :, so in this case 'id'. : means params
+    for (let user of users){
+        if (user.id == id){ // two equal signs since id is a string...
+            res.render('user', { user }) // { user } is now a local, and can be used in ejs file
+        }
+    }
+    res.send({error: `User with id ${id} does not exist`})
+})
+
+app.get('/test/:testId/:abc/:xyz', (req, res) => {
+    console.log(req.params);
+    res.send('Test')
 })
 
 
