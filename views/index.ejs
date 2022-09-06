@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- this doc used to be the index.html, change to index.ejs -->
+    <h2>Hello this is the index.html</h2>
+    <!-- <%= %> allows you to put JS directly to html -->
+    <!-- user esjout emmet abr  -->
+    <h4>Here is some JavaScript addition 2 + 4 = <%= 2 + 4 %> <%= firstName %></h4>
+    <!-- locals.value allows you to bypass errors and just have the value be undefined until needed -->
+    <h4>Welcome <%= locals.firstName %> <%= locals.lastName %> </h4>
+    <% if (locals.firstName) { %>
+        <h4>Welcome <%= locals.firstName %><h4>
+    <% } else { %>
+        <h4>Welcome please sign up<h4>
+    <% } %>
+</body>
+</html> 
