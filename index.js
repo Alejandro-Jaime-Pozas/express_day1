@@ -55,11 +55,30 @@ app.get('/test/:testId/:abc/:xyz', (req, res) => {
     res.send('Test')
 })
 
+// app.put('/users/:id', (req, res) => {
+//     res.send('Update User')
+// })
+
+// app.delete('/users/:id', (req, res) => {
+//     res.send('Delete User')
+// })
+
+
 function logger(req, res, next){
     console.log(req.originalUrl) // this gives us the URL of what we are doing
     req.test = 123 // here we are creating a .test property on the req
     next();
 }
+
+// function getUser(req, res, next){
+//     const userId = req.params.id;
+//     for (let u of users){
+//         if (u.id == userId){
+//             req.user = u
+//             next()
+//         }
+//     }
+// }
 
 
 // this 'listens' for connections
