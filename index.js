@@ -18,21 +18,20 @@ app.get('/abc', (req, res) => {
 
 let users = [
     {
-        id: 1, 
+        id: 1,
         username: 'brian',
         age: 55
     },
     {
-        id: 2, 
+        id: 2,
         username: 'tay',
         age: 26
     },
     {
-        id: 3, 
+        id: 3,
         username: 'bal',
         age: 22
     },
-    
 ]
 
 app.get('/users', (req, res) => {
@@ -44,7 +43,7 @@ app.get('/users/:id', (req, res) => { // this gets the url made by the client/us
     for (let user of users){
         if (user.id == id){ // two equal signs since id is a string...
             res.render('user', { user }) // { user } is now a local, and can be used in ejs file
-            
+
         }
     }
     res.send({error: `User with id ${id} does not exist`})
@@ -62,7 +61,6 @@ app.get('/test/:testId/:abc/:xyz', (req, res) => {
 // app.delete('/users/:id', (req, res) => {
 //     res.send('Delete User')
 // })
-
 
 function logger(req, res, next){
     console.log(req.originalUrl) // this gives us the URL of what we are doing
